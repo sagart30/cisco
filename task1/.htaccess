@@ -1,0 +1,10 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteRule ^list/$ http://localhost/Cisco/task1/controllers/index.php [QSA,L]
+RewriteRule ^getlist/$ http://localhost/Cisco/task1/controllers/index.php?getlist=1 [QSA,L]
+RewriteRule ^add/$ http://localhost/Cisco/task1/controllers/add.php [QSA,L]
+RewriteRule ^update/([0-9]+)/$ http://localhost/Cisco/task1/controllers/update.php?sapid=$1 [QSA,L]
+RewriteRule ^delete/([0-9]+)/$ http://localhost/Cisco/task1/controllers/delete.php?sapid=$1 [QSA,L]
+
+
+
