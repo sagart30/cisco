@@ -8,9 +8,9 @@ error_reporting(0);
 
 
 $database 	= new Database();
-$conn 		= $database->getConnection();
+$conn 		  = $database->getConnection();
 
-$sapid 		= stripslashes(trim($_REQUEST['sapid']));
+$sapid 		  = stripslashes(trim($_REQUEST['sapid']));
 
 $stmt = $conn->prepare("select * from router where sapid = '".$sapid."'");
 $stmt->execute();

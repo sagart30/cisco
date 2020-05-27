@@ -1,0 +1,3 @@
+CREATE VIEW router_view AS
+SELECT hostname, loopback FROM `router`
+WHERE delflag = 0;

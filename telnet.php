@@ -1,16 +1,11 @@
 <?php
 error_reporting(0);
 
-$fp = fsockopen("http://localhost/Cisco/task1/list/", 80, $errno, $errstr, 30);
+$fp = fsockopen("udp://127.0.0.1", 13, $errno, $errstr);
 if (!$fp) {
-    echo "$errstr ($errno)<br />\n";
+    echo "ERROR: $errno - $errstr<br />\n";
 } else {
-    $out = "GET / HTTP/1.1\r\n";
-    $out .= "Host: http://localhost/Cisco/task1/list/\r\n";
-    $out .= "Connection: Close\r\n\r\n";
-    fwrite($fp, $out);
-    while (!feof($fp)) {
-        echo fgets($fp, 128);
-    }
+    fwrite($fp, "\n");
+    echo fread($fp, 26);
     fclose($fp);
 }
